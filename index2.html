@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Store</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <style>
+      #pop1 {
+        width: 70vw; height: 65vh; background-color: #E2AF78; position: fixed;
+        top: 20vh; left: 13.5vw; padding: 10px; display: none;
+      }
+      #pop2 {
+        width: 70vw; height: 65vh; background-color: #B09E99; position: fixed;
+        top: 20vh; left: 13.5vw; padding: 10px; display: none;
+      }
+      #pop3 {
+        width: 70vw; height: 65vh; background-color: #F87666; position: fixed;
+        top: 20vh; left: 13.5vw; padding: 10px; display: none;
+      }
+      #pop4 {
+        width: 70vw; height: 65vh; background-color: #E0E1E9; position: fixed;
+        top: 20vh; left: 13.5vw; padding: 10px; display: none;
+      }
+      #pop5 {
+        width: 70vw; height: 65vh; background-color: #A37B73; position: fixed;
+        top: 20vh; left: 13.5vw; padding: 10px; display: none;
+      }
+      #door1 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene>
+      <!-- camera -->
+      <a-entity camera position="0 0 0" look-controls wasd-controls> 
+        <a-cursor fuse="true" fuseTimeout="500" ></a-cursor>
+      </a-entity>
+
+      <!-- plane -->
+      <a-plane id="layout" src="wood.png"  rotation="-90 0 0" height="11" width="11" position="-4.7 -1 -3.8"> </a-plane> 
+
+  <!-- door -->
+    <a-entity id="door" gltf-model="door/scene.gltf" scale="0.02 0.01 0.01 " position="0.7 0 -0.1"light="type: ambient; color: #FFFFFF; intensity: 1.2;"></a-entity>
+
+  <!-- bookshelves (just change z-axis!) -->
+  <!-- bookshelf stack (copy the y-axis of the position)
+      <a-entity id="bookshelf" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-2 0.9 17.4"></a-entity> -->
+  <!-- first row-->
+  <!-- left -->
+      <a-entity id="bookshelf1" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-3.5 -0.8 17.5"></a-entity>
+      <a-entity id="bookshelf2" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-3.5 -0.8 16.5"></a-entity>
+
+  <!-- right -->
+  <a-entity id="bookshelf3" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-3.5 -0.8 12.1"></a-entity>
+  <a-entity id="bookshelf4" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-3.5 -0.8 11.1"></a-entity>
+
+  <!-- second row-->
+  <!-- left -->
+  <a-entity id="bookshelf5" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-7 -0.8 17.5"></a-entity>
+
+  <!-- right -->
+  <a-entity id="bookshelf6" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-7 -0.8 11.1"></a-entity>
+
+<!-- third row-->
+  <!-- left -->
+  <a-entity id="bookshelf7" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-8.5 -0.8 17.5"></a-entity>
+  <a-entity id="bookshelf8" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-8.5 -0.8 16.5"></a-entity>
+  <a-entity id="bookshelf9" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-8.5 -0.8 15.5"></a-entity>
+
+  <!-- right -->
+  <a-entity id="bookshelf10" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-8.5 -0.8 13.1"></a-entity>
+  <a-entity id="bookshelf11" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-8.5 -0.8 12.1"></a-entity>
+  <a-entity id="bookshelf12" gltf-model="bookshelf_low_poly/scene.gltf" rotation="0 90 0" position="-8.5 -0.8 11.1"></a-entity>
+  
+  <!-- cash regis -->
+    <a-entity id="wooden_corner_table" gltf-model="wooden_corner_table/scene.gltf" height="100" width="150" rotation="0 0 0" position="-2 -1 -9.5"></a-entity>
+    <a-entity id="cash_register" gltf-model="cash_register/scene.gltf" height="50" width="50" rotation="0 90 0" position="-0.2 -0.55 -7.8"></a-entity>
+    
+  <!-- table -->
+  <a-entity id="table_one" gltf-model="wooden_coffee_table/scene.gltf" height="100" width="100" rotation="0 0 0" position="-1.5 -1 -2.5"></a-entity>
+  <a-entity id="table_two" gltf-model="wooden_coffee_table/scene.gltf" height="100" width="100" rotation="0 0 0" position="-1.5 -1 -5"></a-entity>
+  <a-entity id="table_three" gltf-model="wooden_coffee_table/scene.gltf" height="100" width="100" rotation="0 0 0" position="-5.5 -1 -2"></a-entity>
+  <a-entity id="table_four" gltf-model="wooden_coffee_table/scene.gltf" height="100" width="100" rotation="0 0 0" position="-5.5 -1 -5.5"></a-entity>
+  
+  <!-- books on table -->
+  <a-entity id="table_books_one" gltf-model="childhood_books/scene.gltf" height="100" width="100" rotation="0 0 0" position="-1.5 -0.5 -2.5"></a-entity>
+  <a-entity id="table_books_two" gltf-model="childhood_books/scene.gltf" height="100" width="100" rotation="0 0 0" position="-5.5 -0.5 -5.5"></a-entity>
+
+<!--floorplan image and walls and ceiling-->
+<a-plane id="ceiling" src="ceiling.jpg"  rotation="90 0 0" height="11" width="11" position="-4.7 3 -3.8"> </a-plane>
+<a-plane id="brickwall" src="brickwall.jpg" rotation="0 0 0" height="4" width="11" position="-4.7 1 -9.2"> </a-plane>
+<a-plane id="brickwall" src="brickwall.jpg" rotation="0 180 0" height="4" width="11" position="-4.7 1 1.7"> </a-plane>
+<a-plane id="brickwall" src="brickwall.jpg" rotation="0 270 0" height="4" width="11" position="0.8 1 -3.8"> </a-plane>
+<a-plane id="brickwall" src="brickwall.jpg" rotation="0 90 0" height="4" width="11" position="-10.2 1 -3.8"> </a-plane>
+
+</a-scene>
+
+  <!--here are the pop up menus DIVs--> 
+
+  <div id="pop1" style="padding: 20px;">
+    <img src="book1.jpg" width="350px" style="float: right; margin: 10px;" >
+    <h1>The Devil's Arithmetic</h1>
+    <p>Genre: Sci-fi, Fantasy</p>
+    <p>Author: Jane Yolen</p>
+    <p>Synopsis: Hannah Stern is a Jewish preteen girl living in the present day. She is bored by her relative's stories about the past, is not looking forward to the Passover Seder, and is tired of her religion. When Hannah symbolically opens the door for the prophet Elijah, she is transported back in time to a shtetl on the Polish/German border in 1942, during World War II. Hannah is not immediately aware of the time period.</p>
+    
+    <br>
+    <button type="button" onclick="document.querySelector('#pop1').style.display = 'none'">close</button>
+  </div>
+
+  <div id="pop2" style="padding: 20px;">
+    <img src="book2.jpg" width="350px" style="float: right; margin: 10px;" >
+    <h1>White Fang</h1>
+    <p>Genre: Adventure</p>
+    <p>Author: Jack London</p>
+    <p>Synopsis: The story details White Fang's journey to domestication in Yukon Territory and the Northwest Territories during the 1890s Klondike Gold Rush. It is a companion novel (and a thematic mirror) to London's best-known work, The Call of the Wild (1903), which is about a kidnapped, domesticated dog embracing his wild ancestry to survive and thrive in the wild.</p>
+    
+    <br>
+    <button type="button" onclick="document.querySelector('#pop2').style.display = 'none'">close</button>
+  </div>
+
+  <div id="pop3" style="padding: 20px;">
+    <img src="book3.jpg" width="350px" style="float: right; margin: 10px;" >
+    <h1>Avatar: The Last Airbender</h1>
+    <p>Genre: Fantasy, Adventure</p>
+    <p>Author: 	Michael Dante DiMartino & Bryan Konietzko</p>
+    <p>Synopsis: The season revolves around the protagonist Aang and his friends Katara and Sokka going on a journey to the North Pole to find a Waterbending master to teach Aang and Katara. The Fire Nation is waging a seemingly endless imperialist war against the Earth Kingdom and the Water Tribes, following the genocide of the Air Nomads one hundred years ago. Aang, the current Avatar, must master the four elements (Air, Water, Earth, and Fire) to end the war. </p>
+    
+    <br>
+    <button type="button" onclick="document.querySelector('#pop3').style.display = 'none'">close</button>
+  </div>
+
+  <div id="pop4" style="padding: 20px;">
+    <img src="book4.jpg" width="350px" style="float: right; margin: 10px;" >
+    <h1>Jurassic Park</h1>
+    <p>Genre: Sci-fi</p>
+    <p>Author: Michael Crichton</p>
+    <p>Synopsis: A cautionary tale about genetic engineering, it presents the collapse of a zoological park showcasing genetically recreated dinosaurs to illustrate the mathematical concept of chaos theory and its real-world implications. A sequel titled The Lost World, also written by Crichton, was published in 1995. In 1997, both novels were republished as a single book titled Michael Crichton's Jurassic World.</p>
+    
+    <br>
+    <button type="button" onclick="document.querySelector('#pop4').style.display = 'none'">close</button>
+  </div>
+
+  <div id="pop5" style="padding: 20px;">
+    <img src="book5.jpg" width="350px" style="float: right; margin: 10px;" >
+    <h1>To Kill a Mockingbird</h1>
+    <p>Genre: Southern Gothic, Bildungsroman</p>
+    <p>Author: Harper Lee</p>
+    <p>Synopsis: Despite dealing with the serious issues of rape and racial inequality, the novel is renowned for its warmth and humor. Atticus Finch, the narrator's father, has served as a moral hero for many readers and as a model of integrity for lawyers. The historian Joseph Crespino explains, "In the twentieth century, To Kill a Mockingbird is probably the most widely read book dealing with race in America, and its main character, Atticus Finch, the most enduring fictional image of racial heroism."</p>
+    
+    <br>
+    <button type="button" onclick="document.querySelector('#pop5').style.display = 'none'">close</button>
+  </div>
+  <div id="door1">
+    <h1>Would you like to enter the Book Store?</h1>
+    <br>
+    <div id="yes" a href="index.html" onclick= "location.href='index.html';" >
+        <h2>Yes
+          
+        </h2>
+    </div>
+    <div id="no" onclick="document.querySelector('#door1').style.display = 'none'">
+      <h2>No</h2>
+    </div>
+  </div>
+  </body>
+
+  <!-- script for pop up code -->
+  <script>
+var bookshelf = document.querySelector('#bookshelf1');
+bookshelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop1').style.display = "block";
+  });
+var bookshelf = document.querySelector('#bookshelf4');
+bookshelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop2').style.display = "block";
+  });
+var bookshelf = document.querySelector('#bookshelf5');
+bookshelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop3').style.display = "block";
+  });
+  var bookshelf = document.querySelector('#bookshelf7');
+bookshelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop4').style.display = "block";
+  });
+  var bookshelf = document.querySelector('#bookshelf11');
+bookshelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop5').style.display = "block";
+  });
+  var door= document.querySelector('#door');
+door.addEventListener('fusing', function(evt) { 
+    document.getElementById('door1').style.display = "block";
+  });
+
+    </script>
+</html>

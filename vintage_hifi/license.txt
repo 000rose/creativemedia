@@ -1,0 +1,11 @@
+Model Information:
+* title:	VINTAGE HI-FI
+* source:	https://sketchfab.com/3d-models/vintage-hi-fi-221b17991e8f4bfa94132f8002ae8b2c
+* author:	yankobe (https://sketchfab.com/yankobe.do)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "VINTAGE HI-FI" (https://sketchfab.com/3d-models/vintage-hi-fi-221b17991e8f4bfa94132f8002ae8b2c) by yankobe (https://sketchfab.com/yankobe.do) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

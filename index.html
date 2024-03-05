@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CD Store</title>
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <style>
+      #pop1 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+      #pop2 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+      #pop3 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+      #pop4 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+      #pop5 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+      #pop6 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+      #door1 {
+        width: 56.5vw; height: 50vh; background-color:#B69978; border: 10px solid #2C201A; border-radius: 25px; position: fixed;
+        top: 20vh; left: 19vw; padding: 10px; padding-left: 3.5vw; display: none;
+      }
+      h1{
+        font-size: 48px;
+      }
+      #yes{
+        font-size: 40px;padding: 10px;float: left; margin-left: 180px; text-align: center;
+      }
+      #no{
+        font-size: 40px;padding: 10px;float: left; margin-left: 220px; text-align: center;
+      }
+
+      audio{
+        margin-top: 15px;  margin-bottom: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <a-scene>
+      <!--floorplan image and walls and ground-->
+      <a-plane id="floor" src="wood.png"  rotation="-90 0 0" height="11" width="11" position="4.7 -1 -3.6"> </a-plane>
+      <a-plane id="ceiling" src="ceiling.jpg"  rotation="90 0 0" height="11" width="11" position="4.7 3 -3.6"> </a-plane>
+      <a-plane id="brickwall" src="brickwall.jpg" rotation="0 0 0" height="4" width="11" position="4.7 1 -9"> </a-plane>
+      <a-plane id="brickwall" src="brickwall.jpg" rotation="0 180 0" height="4" width="11" position="4.7 1 1.9"> </a-plane>
+      <a-plane id="brickwall" src="brickwall.jpg" rotation="0 90 0" height="4" width="11" position="-0.8 1 -3.6"> </a-plane>
+      <a-plane id="brickwall" src="brickwall.jpg" rotation="0 270 0" height="4" width="11" position="10.2 1 -3.6"> </a-plane>
+
+      <a-entity camera position="0 0 0" look-controls wasd-controls> 
+        <a-cursor fuse="true" fuseTimeout="500" ></a-cursor>
+      </a-entity>
+
+      <!--door and cashier-->
+      <a-entity id="door" gltf-model="door/scene.gltf" scale="0.02 0.01 0.01 " rotation="0 180 0" position="-0.72 0 0.1"light="type: ambient; color: #FFFFFF; intensity: 1.65;"></a-entity>
+      <a-entity id="wooden_corner_table" gltf-model="wooden_corner_table/scene.gltf" height="100" width="100" rotation="0 0 0" position="-1 -1 -9.2"></a-entity>
+      <a-entity id="cash_register" gltf-model="cash_register/scene.gltf" height="100" width="100" rotation="0 90 0" position="0 -0.6 -7.465"></a-entity>
+
+			<!--cd-->
+      <a-entity>
+        <a-entity>
+      <a-entity id="shelf1" gltf-model="store_shelf/scene.gltf" scale="0.8 0.9 0.8 " rotation="0 0 0" position="2.4 -1 -5.3"></a-entity>
+      <a-entity id="cd1" gltf-model="cd_music1/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="2.2 0 -5.3"></a-entity>
+      <a-entity id="cd2" gltf-model="cd_music1/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="2.6 0 -5.3"></a-entity>
+      <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="3.8 0 -5.3"></a-entity>
+      <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="1 0 -5.3"></a-entity>
+         </a-entity>
+         <a-entity position="0 0 4.2">
+        <a-entity id="shelf6" gltf-model="store_shelf/scene.gltf" scale="0.8 0.9 0.8 " rotation="0 0 0" position="2.4 -1 -5.3"></a-entity>
+        <a-entity id="cd3" gltf-model="cd_music1/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="2.2 0 -5.3"></a-entity>
+        <a-entity id="cd4" gltf-model="cd_music1/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="2.6 0 -5.3"></a-entity>
+        <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="3.8 0 -5.3"></a-entity>
+        <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="1 0 -5.3"></a-entity>
+           </a-entity>
+        </a-entity>
+
+        <a-entity  position="1.7 0 0">
+          <a-entity>
+        <a-entity id="shelf2" gltf-model="store_shelf/scene.gltf" scale="0.8 0.9 0.8 " rotation="0 0 0" position="2.4 -1 -5.3"></a-entity>
+        <a-entity id="cd5" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="2.2 0 -5.3"></a-entity>
+        <a-entity id="cd6" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="2.6 0 -5.3"></a-entity>
+        <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="3.8 0 -5.3"></a-entity>
+        <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="1 0 -5.3"></a-entity>
+           </a-entity>
+           <a-entity position="0 0 4.2">
+          <a-entity id="shelf3" gltf-model="store_shelf/scene.gltf" scale="0.8 0.9 0.8 " rotation="0 0 0" position="2.4 -1 -5.3"></a-entity>
+          <a-entity id="cd7" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="2.2 0 -5.3"></a-entity>
+          <a-entity id="cd8" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="2.6 0 -5.3"></a-entity>
+          <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="3.8 0 -5.3"></a-entity>
+          <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="1 0 -5.3"></a-entity>
+             </a-entity>
+          </a-entity>
+
+          <a-entity  position="5.8 0 0">
+            <a-entity>
+          <a-entity id="shelf4" gltf-model="store_shelf/scene.gltf" scale="0.8 0.9 0.8 " rotation="0 0 0" position="2.4 -1 -5.3"></a-entity>
+          <a-entity id="cd9" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="2.2 0 -5.3"></a-entity>
+          <a-entity id="cd10" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="2.6 0 -5.3"></a-entity>
+          <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="3.8 0 -5.3"></a-entity>
+          <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="1 0 -5.3"></a-entity>
+             </a-entity>
+             <a-entity position="0 0 4.2">
+            <a-entity id="shelf5" gltf-model="store_shelf/scene.gltf" scale="0.8 0.9 0.8 " rotation="0 0 0" position="2.4 -1 -5.3"></a-entity>
+            <a-entity id="cd11" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="2.2 0 -5.3"></a-entity>
+            <a-entity id="cd12" gltf-model="cd_music3/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="2.6 0 -5.3"></a-entity>
+            <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 90 0" position="3.8 0 -5.3"></a-entity>
+            <a-entity id="dvd_stacks" gltf-model="dvd_stacks/scene.gltf" scale="2 2 2 " rotation="0 270 0" position="1 0 -5.3"></a-entity>
+               </a-entity>
+            </a-entity>
+
+<!---display table and such-->
+<a-entity id="display_table" gltf-model="display_table/scene.gltf" rotation="0 90 0" position="6.5 -1.65 -2.2"></a-entity>
+
+    </a-scene>
+    
+   <!--here are the pop up menus DIVs--> 
+
+    <div id="pop1">
+      <img src="media/string_theocracy.jpg" height="350px" style="float: right; margin: 10px;" >
+      <h1>String Theocracy</h1>
+      <p>Genre: Jazz, Pop</p>
+      <p>Artist: Mili</p>
+      <p>Release Date: 15/05/2021 </p>
+      
+      <audio controls autoplay>
+        <source src="media/string_theocracy.m4a" type="audio/ogg">
+        <source src="media/string_theocracy.m4a" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      <br>
+      <button type="button" onclick="document.querySelector('#pop1').style.display = 'none'">close</button>
+    </div>
+
+    <div id="pop2">
+      <img src="media/osmanthus.jpg" height="350px" style="float: right; margin: 10px;" >
+      <h1>Osmanthus</h1>
+      <p>Genre: J-Pop</p>
+      <p>Artist: Natori</p>
+      <p>Release Date: 24/08/2023 </p>
+      <audio controls autoplay>
+        <source src="media/osmanthus.m4a" type="audio/ogg">
+        <source src="media/osmanthus.m4a" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      <br>
+      <button type="button" onclick="document.querySelector('#pop2').style.display = 'none'">close</button>
+    </div>
+
+    <div id="pop3">
+      <img src="media/ruler.jpg" height="350px" style="float: right; margin: 10px;" >
+      <h1>Ruler of my Heart</h1>
+      <p>Genre: Folk</p>
+      <p>Artist: BL8M, Rubyeye</p>
+      <p>Release Date: 06/05/2023 </p>
+      <audio controls autoplay>
+        <source src="media/ruler.m4a" type="audio/ogg">
+        <source src="media/ruler.m4a" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      <br>
+      <button type="button" onclick="document.querySelector('#pop3').style.display = 'none'">close</button>
+    </div>
+  
+    <div id="pop4">
+      <img src="media/blue.jpg" height="350px" style="float: right; margin: 10px;" >
+      <h1>No Blueberries</h1>
+      <p>Genre: Pop, Korean Rock/Alt</p>
+      <p>Artist: DPR Ian</p>
+      <p>Release Date: 18/12/2020 </p>
+      <audio controls autoplay>
+        <source src="media/noblueberries.m4a" type="audio/ogg">
+        <source src="media/noblueberries.m4a" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      <br>
+      <button type="button" onclick="document.querySelector('#pop4').style.display = 'none'">close</button>
+    </div>
+
+    <div id="pop5">
+      <img src="media/sole.jpg" height="350px" style="float: right; margin: 10px;" >
+      <h1>O Sole Mio</h1>
+      <p>Genre: K-Pop</p>
+      <p>Artist: The Boyz</p>
+      <p>Release Date: 23/04/2021 </p>
+      <audio controls autoplay>
+        <source src="media/osolemio.m4a" type="audio/ogg">
+        <source src="media/osolemio.m4a" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      <br>
+      <button type="button" onclick="document.querySelector('#pop5').style.display = 'none'">close</button>
+    </div>
+
+    <div id="pop6">
+      <img src="media/ok.jpg" height="350px" style="float: right; margin: 10px;" >
+      <h1>You're Gonna Be Ok</h1>
+      <p>Genre: Instrumental</p>
+      <p>Artist: Iwamizu</p>
+      <p>Release Date: 18/02/2019 </p>
+      <audio controls autoplay>
+        <source src="media/ok.m4a" type="audio/ogg">
+        <source src="media/ok.m4a" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+      <br>
+      <button type="button" onclick="document.querySelector('#pop6').style.display = 'none'">close</button>
+    </div>
+
+    <div id="door1">
+      <h1>Would you like to enter the Book Store?</h1>
+      <br>
+      <div id="yes" a href="index2.html" onclick= "location.href='index2.html';" >
+          <h2>Yes
+            
+          </h2>
+      </div>
+      <div id="no" onclick="document.querySelector('#door1').style.display = 'none'">
+        <h2>No</h2>
+      </div>
+    </div>
+  
+  </body>
+  <script>
+
+    //this is shelf 1 to 4//
+var shelf = document.querySelector('#shelf1');
+shelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop1').style.display = "block";
+  });
+var shelf = document.querySelector('#shelf2');
+shelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop2').style.display = "block";
+  });
+var shelf = document.querySelector('#shelf3');
+shelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop3').style.display = "block";
+  });
+var shelf = document.querySelector('#shelf4');
+shelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop4').style.display = "block";
+  });
+var shelf = document.querySelector('#shelf5');
+shelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop5').style.display = "block";
+  });
+var shelf = document.querySelector('#shelf6');
+shelf.addEventListener('fusing', function(evt) { 
+    document.getElementById('pop6').style.display = "block";
+  });
+
+  var door= document.querySelector('#door');
+door.addEventListener('fusing', function(evt) { 
+    document.getElementById('door1').style.display = "block";
+  });
+
+//   var door = document.querySelector('#door');
+// door.addEventListener('fusing', function(evt) { 
+// location.href="https://github.com/heavylildude/heavylildude.github.io/blob/master/aframe-vr-intro/index.html";
+//   });
+
+
+
+    </script>
+</html>
